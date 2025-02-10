@@ -7,6 +7,8 @@ image: docker-username/railsmaker_sample
 # Deploy to these servers.
 servers:
   web:
+    options:
+      "add-host": host.docker.internal:host-gateway
     hosts:
       - 12.123.123.1
   # job:
@@ -41,6 +43,10 @@ env:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
     SOLID_QUEUE_IN_PUMA: true
+    # OpenTelemetry env vars
+    OTEL_EXPORTER: otlp
+    OTEL_SERVICE_NAME: railsmaker-sample
+    OTEL_EXPORTER_OTLP_ENDPOINT: http://host.docker.internal:4318
 
     # Set number of processes dedicated to Solid Queue (default: 1)
     # JOB_CONCURRENCY: 3
