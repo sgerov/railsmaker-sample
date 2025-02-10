@@ -60,6 +60,9 @@ RUN ln -s /usr/local/bun/bin/bun /usr/local/bun/bin/node
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN TAILWINDCSS_INSTALL_DIR=node_modules/.bin SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
+# Generate sitemap
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails sitemap:refresh
+
 
 
 
