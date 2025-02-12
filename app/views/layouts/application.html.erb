@@ -42,8 +42,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     
       <%# Plausible Analytics %>
-      <script defer data-domain="example.com" src="https://analytics.example.com/js/script.file-downloads.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-      <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script defer data-domain="sample.railsmaker.com" src="https://analytics.railsmaker.com/js/script.file-downloads.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     
     
       <%= Sentry.get_trace_propagation_meta.html_safe if defined?(Sentry) %>
