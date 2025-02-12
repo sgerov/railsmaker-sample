@@ -62,3 +62,10 @@ group :test do
   gem "selenium-webdriver"
 end
 gem "tailwindcss-rails", "~> 4.0.0.rc5"
+
+group :default do
+  gem "clearance", "~> 2.9.3"
+  gem "omniauth", "~> 2.1.2"
+  gem "omniauth-google-oauth2", "~> 1.2.1"
+  gem "omniauth-rails_csrf_protection", "~> 1.0.2"
+end

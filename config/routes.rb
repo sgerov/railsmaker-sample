@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # OmniAuth callback routes
+  get "auth/:provider/callback", to: "omniauth_callbacks#google_oauth2", constraints: { provider: "google_oauth2" }
+  get 'auth/failure', to: 'omniauth_callbacks#failure'
   root 'main#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
