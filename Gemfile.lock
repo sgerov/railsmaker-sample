@@ -182,6 +182,11 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailjet (1.8.0)
+      activesupport (>= 5.0.0)
+      faraday (~> 2.1)
+      rack (>= 1.4.0)
+      yajl-ruby
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
@@ -430,6 +435,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yajl-ruby (1.4.3)
     zeitwerk (2.7.1)
 
 PLATFORMS
@@ -453,6 +459,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   kamal
+  mailjet (~> 1.8)
   omniauth (~> 2.1.2)
   omniauth-google-oauth2 (~> 1.2.1)
   omniauth-rails_csrf_protection (~> 1.0.2)

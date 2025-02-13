@@ -70,3 +70,7 @@ group :default do
   gem "omniauth-rails_csrf_protection", "~> 1.0.2"
 end
 gem "sitemap_generator", "6.3.0"
+
+group :default do
+  gem "mailjet", "~> 1.8"
+end
