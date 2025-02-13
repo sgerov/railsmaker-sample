@@ -63,6 +63,11 @@ aliases:
   shell: app exec --interactive --reuse "bash"
   logs: app logs -f
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
+  restore-db-app: accessory exec litestream "restore -if-replica-exists -config /etc/litestream.yml /rails/storage/production.sqlite3"
+  restore-db-cache: accessory exec litestream "restore -if-replica-exists -config /etc/litestream.yml /rails/storage/production_cache.sqlite3"
+  restore-db-queue: accessory exec litestream "restore -if-replica-exists -config /etc/litestream.yml /rails/storage/production_queue.sqlite3"
+  restore-db-cable: accessory exec litestream "restore -if-replica-exists -config /etc/litestream.yml /rails/storage/production_cable.sqlite3"
+  restore-db-ownership: server exec "sudo chown -R 1000:1000 /var/lib/docker/volumes/railsmaker_sample_storage/_data/"
 
 
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
@@ -79,6 +84,23 @@ asset_path: /rails/public/assets
 # Configure the image builder.
 builder:
   arch: amd64
+
+accessories:
+  litestream:
+    image: litestream/litestream:0.3
+    host: 123.123.123.123
+    volumes:
+      - "railsmaker_sample_storage:/rails/storage"
+    files:
+      - config/litestream.yml:/etc/litestream.yml
+    cmd: replicate -config /etc/litestream.yml
+    env:
+      secret:
+        - LITESTREAM_ACCESS_KEY_ID
+        - LITESTREAM_SECRET_ACCESS_KEY
+        - LITESTREAM_ENDPOINT
+        - LITESTREAM_REGION
+        - LITESTREAM_BUCKET_NAME
 
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
