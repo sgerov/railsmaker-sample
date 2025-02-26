@@ -76,7 +76,7 @@ group :default do
 end
 
 group :default do
-  gem "opentelemetry-sdk", "~> 1.6.0"
+  gem "opentelemetry-sdk", "~> 1.8.0"
   gem "opentelemetry-exporter-otlp", "~> 0.29.1"
   gem "opentelemetry-instrumentation-all", "~> 0.72.0"
   gem "lograge", "~> 0.14.0"
