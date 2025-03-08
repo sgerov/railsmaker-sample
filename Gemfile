@@ -82,3 +82,8 @@ group :default do
   gem "lograge", "~> 0.14.0"
   gem "logstash-event", "~> 1.2.02"
 end
+
+group :default do
+  gem "sentry-ruby", "~> 5.22.3"
+  gem "sentry-rails", "~> 5.22.3"
+end
