@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
+
+import ScrollFadeController from "./scroll_fade_controller"
+application.register("scroll-fade", ScrollFadeController)

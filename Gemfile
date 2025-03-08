@@ -69,3 +69,4 @@ group :default do
   gem "omniauth-google-oauth2", "~> 1.2.1"
   gem "omniauth-rails_csrf_protection", "~> 1.0.2"
 end
+gem "sitemap_generator", "6.3.0"
