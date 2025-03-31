@@ -64,7 +64,7 @@ end
 gem "tailwindcss-rails", "~> 4.2.0"
 
 group :default do
-  gem "clearance", "~> 2.9.3"
+  gem "clearance", "~> 2.10.0"
   gem "omniauth", "~> 2.1.2"
   gem "omniauth-google-oauth2", "~> 1.2.1"
   gem "omniauth-rails_csrf_protection", "~> 1.0.2"
