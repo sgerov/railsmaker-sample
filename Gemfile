@@ -61,7 +61,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-gem "tailwindcss-rails", "~> 4.2.0"
+gem "tailwindcss-rails", "~> 4.3.0"
 
 group :default do
   gem "clearance", "~> 2.9.3"
